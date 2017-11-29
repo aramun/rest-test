@@ -1,0 +1,58 @@
+{
+    "server": "https://reqres.in",
+    "users":{
+        "description": "Users test",
+        "list-user":{
+            "description": "users-list",
+            "endpoint": "/api/users?delay=3",
+            "method": "GET",
+            "status_permitted": [200, 403],
+            "response_draft": {
+                
+                    "page": {"var_type": "int"},
+                    "per_page": {"var_type": "int"},
+                    "total": {"var_type": "int"},
+                    "total_pages": {"var_type": "int"},
+                    "data": [
+                        {
+                            "id": {"var_type":"int"},
+                            "first_name": {"var_type":"unicode"},
+                            "last_name": {"var_type":"unicode"},
+                            "avatar": {"var_type":"unicode"}
+                        }
+                    ]
+                 
+            }
+        },
+        "single-user":{
+            "description": "single user",
+            "endpoint": "/api/users/2",
+            "method": "GET",
+            "status_permitted": [200, 403],
+            "response_draft": {
+                "data": {
+                    "id": {"var_type": "int"},
+                    "first_name": {"var_type": "unicode"},
+                    "last_name": {"var_type": "unicode"},
+                    "avatar": {"var_type": "unicode"}
+                }
+            }
+        },
+        "creating-user":{
+            "description": "creation user",
+            "endpoint": "/api/users",
+            "method": "POST",
+            "body":{
+                "name": "morpheus",
+                "job": "leader"
+            },
+            "status_permitted": [201, 403],
+            "response_draft": {
+                "name": "morpheus",
+                "job": "leader",
+                "id": "589",
+                "createdAt": "2017-11-29T11:30:38.231Z"
+            }
+        }
+    }
+}
