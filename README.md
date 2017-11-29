@@ -3,6 +3,7 @@ Rest client for testing api
 
 ## How to use:
 ```bash
+git clone https://github.com/aramun/rest-test.git
 cd rest-test
 python main.py
 ```
